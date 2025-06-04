@@ -4,15 +4,11 @@ use App\Http\Controllers\FilmController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/teste', [FilmController::class, 'index'])->name('film.index');
+Route::get('/', [FilmController::class, 'index'])->name('film.index');
 
 Route::get('/novo', [FilmController::class, 'create'])->name('film.create');
 

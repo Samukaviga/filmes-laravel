@@ -7,8 +7,8 @@
         <h1 class="text-3xl mb-2 mt-5 text-gray-500 font-bold text-center">Todos Filmes</h1>
 
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-5 border-box">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
 
                         <th scope="col" class="px-6 py-3">
@@ -28,9 +28,9 @@
 
 
                     <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        class="bg-white border-b border-gray-200 hover:bg-gray-50 ">
 
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                             Tropa de elite 2
                         </th>
                         <td class="px-6 py-4">
@@ -38,18 +38,18 @@
                         </td>
 
                         <td class="flex items-center px-6 py-4">
-                            <a href="#" class="font-bold text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                            <a href="#" class="font-bold text-blue-600  hover:underline">Editar</a>
                             <form action="">
-                                <input class="font-bold text-red-600 dark:text-red-500 hover:underline ms-3"
+                                <input class="font-bold text-red-600 hover:underline ms-3"
                                     type="submit" value="remover">
                             </form>
                         </td>
                     </tr>
 
                     <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        class="bg-white border-b border-gray-200 hover:bg-gray-50">
 
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                             Tropa de elite 2
                         </th>
                         <td class="px-6 py-4">
@@ -57,10 +57,10 @@
                         </td>
 
                         <td class="flex items-center px-6 py-4">
-                            <a href="#" class="font-bold text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                            <a href="#" class="font-bold text-blue-600 hover:underline">Editar</a>
 
                             <form action="">
-                                <input class="font-bold text-red-600 dark:text-red-500 hover:underline ms-3"
+                                <input class="font-bold text-red-600 hover:underline ms-3"
                                     type="submit" value="remover">
                             </form>
 
