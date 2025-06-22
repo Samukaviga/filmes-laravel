@@ -94,7 +94,7 @@
 
     <div class=" pl-0 md:pl-64">
 
-        <div class="p-5 flex gap-2 flex-wrap">
+        <div class="p-5 flex justify-center md:justify-start gap-2 flex-wrap">
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm">
                 <a href="/editar">
                     <img class="rounded-t-lg w-full h-64 md:h-[350px] object-cover object-center"

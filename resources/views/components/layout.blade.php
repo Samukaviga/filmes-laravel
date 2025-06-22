@@ -32,7 +32,7 @@
             class="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
             <ul class="space-y-2">
                 <li>
-                    <a href="/teste"
+                    <a href="{{ route('film.index') }}"
                         class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <i
                             class="fa-solid fa-house transition duration-75 text-xl w-6 h-6 text-gray-400 group-hover:text-gray-900"></i>
@@ -55,11 +55,11 @@
                     </button>
                     <ul id="dropdown-sales" class="hidden py-2 space-y-2">
                         <li>
-                            <a href="/novo"
+                            <a href="{{ route('film.create') }}"
                                 class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Novo</a>
                         </li>
                         <li>
-                            <a href="/lista"
+                            <a href="{{ route('film.show') }}"
                                 class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Lista</a>
                         </li>
 
