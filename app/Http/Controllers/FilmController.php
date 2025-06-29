@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Services\Film\FilmService;
 use Illuminate\Http\Request;
 
 class FilmController extends Controller
 {
+
+    public function __construct(FilmService $filmService)
+    {
+        $this->filmService = $filmService;
+    }
+
     public function index()
     {
         return view('filmes.index');
@@ -21,8 +28,6 @@ class FilmController extends Controller
 
     public function store(Request $request)
     {
-
-       // dd($request->all());
 
         $validated = $request->validate([
             'name' => 'required',
