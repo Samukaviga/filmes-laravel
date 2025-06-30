@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateFilmRequest;
 use App\Models\Category;
 use App\Services\Film\FilmService;
 use Illuminate\Http\Request;
@@ -26,20 +27,13 @@ class FilmController extends Controller
         return view('filmes.create')->with('categories', Category::all())->with('mensagemSucesso', $mensagemSucesso);
     }
 
-    public function store(Request $request)
+    public function store(CreateFilmRequest $request)
     {
+          
+        $this->filmService->store($request->validated());
 
-        $validated = $request->validate([
-            'name' => 'required',
-            'catogory' => 'required',
-        ]);
-
-        return redirect('/novo')->with('mensagemSucesso', 'Blog editado com Sucesso!');
-
-       
-        //   $coverPath = $request->hasFile('cover') ? $request->file('cover')->store('series_cover', 'public') : $coverPath = null; //armazena em um lugar permanente. O Laravel cria uma pasta com o nome 'series_cover' e retorna o caminho salvo e salva em public (config/filesystems)
-
-        // $request->coverPath = $coverPath;
+        return back()->with('mensagemSucesso', 'Filme criado com Sucesso!');
+        
     }
 
     public function edit()

@@ -11,7 +11,7 @@ class CreateFilmRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class CreateFilmRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|min:3',
+            'category' => 'required',
+            'image' => 'nullable',
         ];
     }
 }
