@@ -15,7 +15,6 @@
             @endif
             <!-- Alert Succes -->
 
-
             <!-- Alert error -->
             @if($errors->any())
             @foreach ($errors->all() as $error)
@@ -25,8 +24,6 @@
             @endforeach
             @endif
             <!-- Alert error -->
-
-
 
             <form action="{{ route('category.store') }}" method="POST" class="w-full border border-gray-700 rounded-md p-5">
                 @csrf
