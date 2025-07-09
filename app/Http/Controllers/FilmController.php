@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateFilmRequest;
+use App\Http\Requests\FilmRequest;
 use App\Models\Category;
 use App\Services\Film\FilmService;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class FilmController extends Controller
         return view('filmes.create')->with('categories', Category::all())->with('mensagemSucesso', $mensagemSucesso);
     }
 
-    public function store(CreateFilmRequest $request)
+    public function store(FilmRequest $request)
     {
           
         $this->filmService->store($request->validated());
