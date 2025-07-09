@@ -24,11 +24,9 @@ class CategoryController extends Controller
     {
         return view('categories.create');
     }
-
     
     public function store(CategoryRequest $request, CategoryService $service)
-    {
-        
+    {   
         $dto = CreateCategoryDTO::fromArray($request->validated());
         $category = $service->store($dto);
 
