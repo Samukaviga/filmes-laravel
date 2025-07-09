@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateFilmRequest extends FormRequest
+class FilmRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,6 +25,14 @@ class CreateFilmRequest extends FormRequest
             'name' => 'required|min:3',
             'category' => 'required',
             'image' => 'nullable',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'O nome do filme é obrigátorio.',
+            'name.min:3' => 'O nome do filme precisa ter pelo menos 3 caracteres.'
         ];
     }
 }
