@@ -22,14 +22,17 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
     
     public function store(CategoryRequest $request, CategoryService $service)
     {
+        
         $dto = CreateCategoryDTO::fromArray($request->validated());
         $category = $service->store($dto);
+
+        return back()->with('success', "Categoria $category->name criada com sucesso!");
     }
 
     /**

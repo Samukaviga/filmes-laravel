@@ -81,7 +81,7 @@
                     </button>
                     <ul id="dropdown-pages" class="hidden py-2 space-y-2">
                         <li>
-                            <a href="#" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100">Novo</a>
+                            <a href="{{ route('category.create') }}" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100">Novo</a>
                         </li>
                         <li>
                             <a href="#" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100">Lista</a>
