@@ -28,11 +28,13 @@ Route::get('/category',[CategoryController::class, 'index'])->name('category.ind
 
 Route::get('/category/create',[CategoryController::class, 'create'])->name('category.create');
 
-Route::post('/category/new',[CategoryController::class, 'store'])->name('category.store');
+Route::post('/category',[CategoryController::class, 'store'])->name('category.store');
 
-Route::get('/category/{category}',[CategoryController::class, 'edit'])->name('category.edit');
+Route::get('/category/{category}/edit',[CategoryController::class, 'edit'])->name('category.edit');
 
-Route::put('/category',[CategoryController::class, 'update'])->name('category.update');
+Route::put('/category/{category}',[CategoryController::class, 'update'])->name('category.update');
+
+Route::delete('/category/{category}',[CategoryController::class, 'destroy'])->name('category.destroy');
 
 
 

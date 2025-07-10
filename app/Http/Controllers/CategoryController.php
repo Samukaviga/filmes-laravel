@@ -53,22 +53,24 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CategoryRequest $request)
+    public function update(CategoryRequest $request, Category $category)
     {
-        $category = Category::find($request->id);
-
+        
         $category->name = $request->name;
         $category->save();
 
-        redirect()->route('category.index')->with('success',"categoria $category->name, criada com sucesso.");
+        return redirect()->route('category.index')->with('success',"categoria $category->name, criada com sucesso.");
 
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Category $category)
     {
-        //
+
+        $category->delete();
+
+        return back()->with('success', 'Categoria excluida com sucesso');
     }
 }
