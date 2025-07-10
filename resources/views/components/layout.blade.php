@@ -32,7 +32,7 @@
             class="overflow-y-auto py-5 px-3 h-full bg-gray-900 border-r border-gray-800">
             <ul class="space-y-2">
                 <li>
-                    <a href="{{ route('film.index') }}"
+                    <a href="{{ route('film.dashboard') }}"
                         class="flex items-center p-2 text-base font-normal text-gray-800 rounded-lg hover:bg-gray-800 group">
                         <i
                             class="fa-solid fa-house transition duration-75 text-xl w-6 h-6 text-gray-600 group-hover:text-gray-400"></i>
@@ -59,7 +59,7 @@
                                 class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-400 rounded-lg transition duration-75 group hover:bg-gray-800">Novo</a>
                         </li>
                         <li>
-                            <a href="{{ route('film.show') }}"
+                            <a href="{{ route('film.index') }}"
                                 class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-400 rounded-lg transition duration-75 group hover:bg-gray-800">Lista</a>
                         </li>
 

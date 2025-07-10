@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DTOs\Category\CreateCategoryDTO;
+use App\DTOs\Category\UpdateCategoryDTO;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use App\Services\CategoryService;
@@ -13,6 +14,15 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    protected CategoryService $service;
+
+     public function __construct(CategoryService $service)
+     {
+        $this->service = $service;
+     }
+
+
     public function index()
     {
           return view('categories.index')->with('categories', Category::all());
@@ -26,10 +36,10 @@ class CategoryController extends Controller
         return view('categories.create');
     }
     
-    public function store(CategoryRequest $request, CategoryService $service)
+    public function store(CategoryRequest $request)
     {   
         $dto = CreateCategoryDTO::fromArray($request->validated());
-        $category = $service->store($dto);
+        $category = $this->service->store($dto);
 
         return back()->with('success', "Categoria $category->name criada com sucesso!");
     }
@@ -56,10 +66,10 @@ class CategoryController extends Controller
     public function update(CategoryRequest $request, Category $category)
     {
         
-        $category->name = $request->name;
-        $category->save();
+        $dto = UpdateCategoryDTO::fromArray($request->validated());
+        $this->service->update($dto, $category);
 
-        return redirect()->route('category.index')->with('success',"categoria $category->name, criada com sucesso.");
+        return redirect()->route('category.index')->with('success',"categoria $category->name, atualizada com sucesso.");
 
     }
 

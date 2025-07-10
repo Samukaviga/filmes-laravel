@@ -10,15 +10,21 @@ use Illuminate\Http\Request;
 
 class FilmController extends Controller
 {
+    protected $filmService;
 
     public function __construct(FilmService $filmService)
     {
         $this->filmService = $filmService;
     }
 
-    public function index()
+     public function index()
     {
         return view('films.index');
+    }
+
+    public function dashboard()
+    {
+        return view('films.dashboard');
     }
 
     public function create()
@@ -40,8 +46,5 @@ class FilmController extends Controller
         return view('films.edit');
     }
 
-    public function show()
-    {
-        return view('films.show');
-    }
+   
 }
