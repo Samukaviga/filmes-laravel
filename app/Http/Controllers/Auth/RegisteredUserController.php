@@ -45,6 +45,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('film.index', absolute: false), 302);
+        return redirect(route('film.dashboard', absolute: false), 302);
     }
 }

@@ -16,9 +16,14 @@ class FilmController extends Controller
         $this->filmService = $filmService;
     }
 
-    public function index()
+     public function index()
     {
         return view('films.index');
+    }
+
+    public function dashboard()
+    {
+        return view('films.dashboard');
     }
 
     public function create()
@@ -40,8 +45,5 @@ class FilmController extends Controller
         return view('films.edit');
     }
 
-    public function show()
-    {
-        return view('films.show');
-    }
+   
 }

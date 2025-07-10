@@ -14,27 +14,28 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard'); */
 
-Route::get('/', [FilmController::class, 'index'])->name('film.index');
+Route::get('/', [FilmController::class, 'dashboard'])->name('film.dashboard');
 
-Route::get('/novo', [FilmController::class, 'create'])->name('film.create');
+Route::get('/films', [FilmController::class, 'index'])->name('film.index');
 
-Route::get('/editar', [FilmController::class, 'edit'])->name('film.edit');
+Route::get('/films/create', [FilmController::class, 'create'])->name('film.create');
 
-Route::get('/lista', [FilmController::class, 'show'])->name('film.show');
+Route::get('/films/{film}/edit', [FilmController::class, 'edit'])->name('film.edit');
+
 
 Route::post('/novo', [FilmController::class, 'store'])->name('film.store');
 
-Route::get('/category',[CategoryController::class, 'index'])->name('category.index');
+Route::get('/categories',[CategoryController::class, 'index'])->name('category.index');
 
-Route::get('/category/create',[CategoryController::class, 'create'])->name('category.create');
+Route::get('/categories/create',[CategoryController::class, 'create'])->name('category.create');
 
-Route::post('/category',[CategoryController::class, 'store'])->name('category.store');
+Route::post('/categories',[CategoryController::class, 'store'])->name('category.store');
 
-Route::get('/category/{category}/edit',[CategoryController::class, 'edit'])->name('category.edit');
+Route::get('/categories/{category}/edit',[CategoryController::class, 'edit'])->name('category.edit');
 
-Route::put('/category/{category}',[CategoryController::class, 'update'])->name('category.update');
+Route::put('/categories/{category}',[CategoryController::class, 'update'])->name('category.update');
 
-Route::delete('/category/{category}',[CategoryController::class, 'destroy'])->name('category.destroy');
+Route::delete('/categories/{category}',[CategoryController::class, 'destroy'])->name('category.destroy');
 
 
 
