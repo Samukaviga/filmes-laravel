@@ -22,8 +22,8 @@ Route::get('/films/create', [FilmController::class, 'create'])->name('film.creat
 
 Route::get('/films/{film}/edit', [FilmController::class, 'edit'])->name('film.edit');
 
-
 Route::post('/novo', [FilmController::class, 'store'])->name('film.store');
+
 
 Route::get('/categories',[CategoryController::class, 'index'])->name('category.index');
 
