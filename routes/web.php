@@ -24,9 +24,16 @@ Route::get('/lista', [FilmController::class, 'show'])->name('film.show');
 
 Route::post('/novo', [FilmController::class, 'store'])->name('film.store');
 
-Route::get('/category',[CategoryController::class, 'create'])->name('category.create');
+Route::get('/category',[CategoryController::class, 'index'])->name('category.index');
+
+Route::get('/category/create',[CategoryController::class, 'create'])->name('category.create');
 
 Route::post('/category/new',[CategoryController::class, 'store'])->name('category.store');
+
+Route::get('/category/{category}',[CategoryController::class, 'edit'])->name('category.edit');
+
+Route::put('/category',[CategoryController::class, 'update'])->name('category.update');
+
 
 
 Route::middleware('auth')->group(function () {

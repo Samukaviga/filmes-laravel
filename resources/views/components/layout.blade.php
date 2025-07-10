@@ -84,7 +84,7 @@
                             <a href="{{ route('category.create') }}" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-400 rounded-lg transition duration-75 group hover:bg-gray-800">Novo</a>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-400 rounded-lg transition duration-75 group hover:bg-gray-800">Lista</a>
+                            <a href="{{ route('category.index') }}" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-400 rounded-lg transition duration-75 group hover:bg-gray-800">Lista</a>
                         </li>
                     </ul>
                 </li>
