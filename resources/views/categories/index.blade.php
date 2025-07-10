@@ -6,6 +6,14 @@
 
         <h1 class="text-3xl mb-2 mt-5 text-gray-400 font-bold text-center">Categorias</h1>
 
+        <!-- Alert Succes -->
+            @if(session('success'))
+            
+            <x-alert-success :message="session('success')" /> 
+
+            @endif
+        <!-- Alert Succes -->
+
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-5 border-box">
             <table class="w-full text-sm text-left rtl:text-right text-gray-400">
                 <thead class="text-xs text-gray-400 uppercase bg-gray-800">

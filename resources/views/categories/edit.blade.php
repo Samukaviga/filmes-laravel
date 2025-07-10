@@ -25,7 +25,7 @@
             @endif
             <!-- Alert error -->
 
-            <form action="{{ route('category.update') }}" method="POST" class="w-full border border-gray-700 rounded-md p-5">
+            <form action="{{ route('category.update', [$category->id]) }}" method="POST" class="w-full border border-gray-700 rounded-md p-5">
                 @csrf
                 @method('PUT')
                 <div class="mb-5">
