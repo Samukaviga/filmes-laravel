@@ -18,14 +18,12 @@ class FilmController extends Controller
 
     public function index()
     {
-        return view('filmes.index');
+        return view('films.index');
     }
 
     public function create()
     {
-        $mensagemSucesso = session('mensagem-sucesso');
-
-        return view('filmes.create')->with('categories', Category::all())->with('mensagemSucesso', $mensagemSucesso);
+        return view('films.create')->with('categories', Category::all());
     }
 
     public function store(FilmRequest $request)
@@ -33,17 +31,17 @@ class FilmController extends Controller
           
         $this->filmService->store($request->validated());
 
-        return back()->with('mensagemSucesso', 'Filme criado com Sucesso!');
+        return back()->with('success', 'Filme criado com Sucesso!');
         
     }
 
     public function edit()
     {
-        return view('filmes.edit');
+        return view('films.edit');
     }
 
     public function show()
     {
-        return view('filmes.show');
+        return view('films.show');
     }
 }

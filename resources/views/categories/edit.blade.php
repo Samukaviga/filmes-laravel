@@ -5,7 +5,7 @@
 
         <div class="flex flex-col items-center h-full w-fill p-5">
 
-            <h1 class="text-3xl mb-2 text-gray-400 font-bold">Cadastro Categoria</h1>
+            <h1 class="text-3xl mb-2 text-gray-400 font-bold">Editar Categoria ( {{$category->name}} ) </h1>
 
             <!-- Alert Succes -->
             @if(session('success'))
@@ -25,17 +25,19 @@
             @endif
             <!-- Alert error -->
 
-            <form action="{{ route('category.store') }}" method="POST" class="w-full border border-gray-700 rounded-md p-5">
+            <form action="{{ route('category.update') }}" method="POST" class="w-full border border-gray-700 rounded-md p-5">
                 @csrf
+                @method('PUT')
                 <div class="mb-5">
                     <label for="large-input"
                         class="block mb-2 text-sm font-medium text-gray-300">Nome</label>
-                    <input type="text" id="large-input" name="name"
+                    <input type="text" id="large-input" name="name" value="{{ $category->name}}"
                         class="block w-full p-2 text-gray-300 border border-gray-700 rounded-lg bg-gray-800 text-base focus:ring-gray-500 focus:border-gray-500">
+                        <input type="hidden" name="id" value="`{{ $category->id }}">
                 </div>
 
                 <input class="bg-blue-800 text-gray-300 font-bold px-4 py-2 border border-gray-600 rounded-md hover:bg-blue-900" type="submit"
-                    value="Adicionar">
+                    value="Editar">
 
 
 
