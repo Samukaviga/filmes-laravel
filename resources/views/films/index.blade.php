@@ -26,46 +26,30 @@
                 </thead>
                 <tbody>
 
-
-                    <tr
-                        class="bg-gray-800 border-b border-gray-700 hover:bg-gray-700 ">
-
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-400 whitespace-nowrap">
-                            Tropa de elite 2
-                        </th>
-                        <td class="px-6 py-4">
-                            Ação
-                        </td>
-
-                        <td class="flex items-center px-6 py-4">
-                            <a href="#" class="font-bold text-blue-700 hover:underline">Editar</a>
-                            <form action="">
-                                <input class="font-bold text-red-700 hover:underline ms-3"
-                                    type="submit" value="remover">
-                            </form>
-                        </td>
-                    </tr>
-
+                    @foreach ($films as $film )
+                        
+                    
                     <tr
                         class="bg-gray-800 border-b border-gray-700 hover:bg-gray-700">
 
                         <th scope="row" class="px-6 py-4 font-medium text-gray-400 whitespace-nowrap">
-                            Tropa de elite 2
+                            {{ $film->name }}
                         </th>
                         <td class="px-6 py-4">
-                            Ação
+                            {{ $film->category->name }}
                         </td>
 
                         <td class="flex items-center px-6 py-4">
                             <a href="#" class="font-bold text-blue-700 hover:underline">Editar</a>
 
-                            <form action="">
-                                <input class="font-bold text-red-700 hover:underline ms-3"
-                                    type="submit" value="remover">
-                            </form>
+                            <x-form :action="route('film.destroy', $film->id)" delete>
+                                <button class="font-bold text-red-700 hover:underline ms-3">Remover</button>
+                            </x-form>
 
                         </td>
                     </tr>
+
+                    @endforeach
 
 
                 </tbody>

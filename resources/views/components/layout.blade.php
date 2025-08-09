@@ -103,21 +103,16 @@
                         <i class="fa-solid fa-caret-down w-6 h-6"></i>
                     </button>
                     <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
+                       
                         <li>
                             <a href="#"
-                                class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-400 rounded-lg transition duration-75 group hover:bg-gray-800">Sign
-                                In</a>
+                                class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-400 rounded-lg transition duration-75 group hover:bg-gray-800">Alterar Senha</a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-400 rounded-lg transition duration-75 group hover:bg-gray-800">Sign
-                                Up</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-400 rounded-lg transition duration-75 group hover:bg-gray-800">Forgot
-                                Password</a>
-                        </li>
+                                <x-form :action="route('logout')">
+                                    <button class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-400 rounded-lg transition duration-75 group hover:bg-gray-800">Sair</button>
+                                </x-form>    
+                        </li>   
                     </ul>
                 </li>
                 <!-- Authentication -->

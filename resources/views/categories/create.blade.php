@@ -37,8 +37,6 @@
                 <input class="bg-blue-800 text-gray-300 font-bold px-4 py-2 border border-gray-600 rounded-md hover:bg-blue-900" type="submit"
                     value="Adicionar">
 
-
-
             </form>
         </div>
 
