@@ -14,6 +14,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard'); */
 
+Route::middleware('auth')->group(function () {
+
 Route::get('/', [FilmController::class, 'dashboard'])->name('film.dashboard');
 
 Route::get('/films', [FilmController::class, 'index'])->name('film.index');
@@ -22,7 +24,13 @@ Route::get('/films/create', [FilmController::class, 'create'])->name('film.creat
 
 Route::get('/films/{film}/edit', [FilmController::class, 'edit'])->name('film.edit');
 
-Route::post('/novo', [FilmController::class, 'store'])->name('film.store');
+Route::delete('/films/{film}', [FilmController::class, 'destroy'])->name('film.destroy');
+
+Route::post('/films', [FilmController::class, 'store'])->name('film.store');
+
+Route::post('/films/{film}', [FilmController::class, 'update'])->name('film.update');
+
+
 
 
 Route::get('/categories',[CategoryController::class, 'index'])->name('category.index');
@@ -39,7 +47,7 @@ Route::delete('/categories/{category}',[CategoryController::class, 'destroy'])->
 
 
 
-Route::middleware('auth')->group(function () {
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
