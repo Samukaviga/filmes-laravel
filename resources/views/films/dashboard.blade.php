@@ -10,8 +10,8 @@
                         <label for="simple-search" class="sr-only">Pesquisar</label>
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500"
-                                    fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor"
+                                    viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                                         clip-rule="evenodd" />
@@ -95,35 +95,26 @@
     <div class=" pl-0 md:pl-64">
 
         <div class="p-5 flex justify-center md:justify-start gap-2 flex-wrap">
-            <div class="max-w-sm bg-gray-800 border border-gray-600 rounded-lg shadow-sm">
-                <a href="/editar">
-                    <img class="rounded-t-lg w-full h-64 md:h-[350px] object-cover object-center"
-                        src="{{ asset('/imagens/tropa-de-elite.jpg') }}" alt="" />
-                </a>
-                <div class="p-5">
 
-                    <p class="text-gray-400 font-bold mb-1">Ação</p>
+            @foreach ($films as $film)
 
-                    <a href="/editar">
-                        <h5 class="mb-3 text-2xl font-bold tracking-tight text-gray-300">Tropa de elite</h5>
+                <div class="max-w-sm bg-gray-800 border border-gray-600 rounded-lg shadow-sm">
+                    <a href="{{ route('film.edit', $film->id) }}">
+                        <img class="rounded-t-lg w-full h-64 md:h-[350px] object-cover object-center"
+                            src="{{ asset('storage/' . $film->image) }}" alt="Capa do film {{ $film->name }}" />
                     </a>
+                    <div class="p-5">
+
+                        <p class="text-gray-400 font-bold mb-1">{{ $film->category->name }}</p>
+
+                        <a href="{{ route('film.edit', $film->id) }}">
+                            <h5 class="mb-3 text-2xl font-bold tracking-tight text-gray-300">{{ $film->name }}</h5>
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="max-w-sm bg-gray-800 border border-gray-600 rounded-lg shadow-sm">
-                <a href="/editar">
-                    <img class="rounded-t-lg w-full h-64 md:h-[350px] object-cover object-center"
-                        src="{{ asset('/imagens/tropa-de-elite-2.jpg') }}" alt="" />
-                </a>
-                <div class="p-5">
+            @endforeach
 
-                    <p class="text-gray-400 font-bold mb-1">Ação</p>
-
-                    <a href="/editar">
-                        <h5 class="mb-3 text-2xl font-bold tracking-tight text-gray-300">Tropa de elite 2</h5>
-                    </a>
-                </div>
-            </div>
         </div>
 
 

@@ -40,7 +40,7 @@
                         </td>
 
                         <td class="flex items-center px-6 py-4">
-                            <a href="#" class="font-bold text-blue-700 hover:underline">Editar</a>
+                            <a href="{{ route('film.edit', $film->id) }}" class="font-bold text-blue-700 hover:underline">Editar</a>
 
                             <x-form :action="route('film.destroy', $film->id)" delete>
                                 <button class="font-bold text-red-700 hover:underline ms-3">Remover</button>

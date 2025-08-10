@@ -28,6 +28,8 @@ Route::delete('/films/{film}', [FilmController::class, 'destroy'])->name('film.d
 
 Route::post('/films', [FilmController::class, 'store'])->name('film.store');
 
+Route::post('/films/{film}', [FilmController::class, 'update'])->name('film.update');
+
 
 
 
