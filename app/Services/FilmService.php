@@ -17,6 +17,7 @@ class FilmService
         return DB::transaction(function () use ($data) {
             return Film::create([
                 'name' => $data->name,
+                'description' => $data->description,
                 'categories_id' => $data->category,
                 'image' => $data->image,
             ]);
@@ -34,6 +35,7 @@ class FilmService
         return DB::transaction(function () use ($data, $film) {
             return $film->update([
                 'name' => $data->name,
+                'description' => $data->description,
                 'category' => $data->category,
                 'image' => $data->image !== '' ? $data->image : $film->image
             ]);

@@ -2,16 +2,16 @@
 
 namespace App\DTOs\Film;
 
-class UpdateFilmDTO 
+class UpdateFilmDTO
 {
 
 
     public function __construct(
         public readonly string $name,
         public readonly ?string $image,
+        public readonly ?string $description,
         public readonly ?int $category
-    )
-    {
+    ) {
     }
 
     public static function fromArray(array $data)
@@ -19,15 +19,17 @@ class UpdateFilmDTO
         return new self(
             name: trim($data['name'] ?? ''),
             image: trim($data['image'] ?? ''),
-            category: $data['category'] ?? null
+            description: trim($data['description'] ?? ''),
+            category: $data['category'] ?? null,
         );
     }
 
     public function toArray()
     {
-        return [ 
+        return [
             'name' => $this->name,
             'image' => $this->image,
+            'description' => $this->description,
             'category' => $this->category
         ];
     }

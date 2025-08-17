@@ -6,6 +6,14 @@
 
         <h1 class="text-3xl mb-2 mt-5 text-gray-400 font-bold text-center">Todos Filmes</h1>
 
+        <!-- Alert Succes -->
+        @if(session('success'))
+
+            <x-alert-success :message="session('success')" />
+
+        @endif
+        <!-- Alert Succes -->
+
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-5 border-box">
             <table class="w-full text-sm text-left rtl:text-right text-gray-400">
                 <thead class="text-xs text-gray-400 uppercase bg-gray-800">
@@ -26,39 +34,52 @@
                 </thead>
                 <tbody>
 
-                    @foreach ($films as $film )
-                        
-                    
-                    <tr
-                        class="bg-gray-800 border-b border-gray-700 hover:bg-gray-700">
+                    @foreach ($films as $film)
 
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-400 whitespace-nowrap">
-                            {{ $film->name }}
-                        </th>
-                        <td class="px-6 py-4">
-                            {{ $film->category->name }}
-                        </td>
 
-                        <td class="flex items-center px-6 py-4">
-                            <a href="{{ route('film.edit', $film->id) }}" class="font-bold text-blue-700 hover:underline">Editar</a>
+                        <tr class="bg-gray-800 border-b border-gray-700 hover:bg-gray-700">
 
-                            <x-form :action="route('film.destroy', $film->id)" delete>
-                                <button class="font-bold text-red-700 hover:underline ms-3">Remover</button>
-                            </x-form>
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-400 whitespace-nowrap">
 
-                        </td>
-                    </tr>
+                                <a class="hover:text-gray-100" href="{{ route('film.description', $film->id) }}">
+                                    {{ $film->name }}
+                                </a>
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $film->category->name }}
+                            </td>
+
+                            <td class="flex items-center px-6 py-4">
+                                <a href="{{ route('film.edit', $film->id) }}"
+                                    class="font-bold text-blue-700 hover:underline">Editar</a>
+
+                                <form action="{{ route('film.destroy', $film->id) }}" method="POST"
+                                    onsubmit="return confirm('Tem certeza que deseja remover esse filme?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="font-bold text-red-700 hover:underline ms-3">
+                                        Remover
+                                    </button>
+                                </form>
+
+                            </td>
+                        </tr>
 
                     @endforeach
 
 
+
+
                 </tbody>
             </table>
+
+            <div class="flex justify-center mt-4">
+                {{ $films->links() }}
+            </div>
         </div>
 
-
-
     </div>
+
 
 
 </x-layout>

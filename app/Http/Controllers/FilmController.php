@@ -23,7 +23,7 @@ class FilmController extends Controller
 
     public function index()
     {
-        return view('films.index', ['films' => Film::all()]);
+        return view('films.index', ['films' => Film::orderBy('name')->paginate(10)]);
     }
 
     public function dashboard()
@@ -31,9 +31,14 @@ class FilmController extends Controller
         return view('films.dashboard', ['films' => Film::all()]);
     }
 
-    public function create()
+    public function description(Film $film) 
     {
-        return view('films.create', ['categories' => Category::all()]);
+        return view('films.description', ['film' => $film]);
+    }
+
+    public function create()
+    {   
+        return view('films.create', ['categories' => Category::orderBy('name')->get()]);
     }
 
     public function store(FilmRequest $request)
@@ -46,6 +51,7 @@ class FilmController extends Controller
         $dto = CreateFilmDTO::fromArray([
             'name' => $request->name,
             'image' => $imagePath,
+            'description' => $request->description,
             'category' => $request->category
         ]);
 
@@ -75,7 +81,7 @@ class FilmController extends Controller
 
         $this->filmService->update($dto, $film);
 
-        return redirect()->route('film.index')->with('success', 'Filme atualizado com sucesso!');
+        return back()->with('success', 'Filme atualizado com sucesso!');
     }
 
 
