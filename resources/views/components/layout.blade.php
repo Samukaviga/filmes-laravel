@@ -100,7 +100,7 @@
                         <i
                             class="fa-solid fa-lock transition duration-75 text-xl w-6 h-6 text-gray-600 group-hover:text-gray-600"></i>
 
-                        <span class="flex-1 ml-3 text-left whitespace-nowrap">Authentication</span>
+                        <span class="flex-1 ml-3 text-left whitespace-nowrap">Configurações</span>
                         <i class="fa-solid fa-caret-down w-6 h-6"></i>
                     </button>
                     <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
