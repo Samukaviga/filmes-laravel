@@ -18,6 +18,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', [FilmController::class, 'dashboard'])->name('film.dashboard');
 
+Route::get('/films/{film}/description', [FilmController::class, 'description'])->name('film.description');
+
 Route::get('/films', [FilmController::class, 'index'])->name('film.index');
 
 Route::get('/films/create', [FilmController::class, 'create'])->name('film.create');

@@ -39,12 +39,21 @@
                         class="block w-full p-2 text-gray-300 border border-gray-700 rounded-lg bg-gray-800 text-base focus:ring-gray-500 focus:border-gray-500">
                 </div>
 
+                <div class="mb-4">
+
+                    <label for="description" class="block mb-2 text-sm font-medium text-gray-300 ">Sinopse</label>
+                    <textarea name="description" id="description" rows="4"
+                        class="block p-2.5 w-full text-sm text-gray-300 bg-gray-800 rounded-lg border border-gray-700 focus:ring-gray-500 focus:border-gray-500 "
+                        placeholder="Sinopse do filme..."></textarea>
+
+                </div>
+
                 <div class="mb-5">
                     <label for="countries" class="block mb-2 text-sm font-medium text-gray-300">Categoria</label>
                     <select name="category" id="countries"
                         class="bg-gray-800 border border-gray-700 text-gray-300 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5">
 
-                        <option value="0">Selecione</option>
+                        <option value="">Selecione</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach

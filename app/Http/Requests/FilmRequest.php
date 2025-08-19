@@ -25,6 +25,7 @@ class FilmRequest extends FormRequest
             'name' => 'required|min:3',
             'category' => 'required',
             'image' => 'nullable',
+            'description' => 'nullable',
         ];
     }
 
@@ -32,7 +33,8 @@ class FilmRequest extends FormRequest
     {
         return [
             'name.required' => 'O nome do filme é obrigátorio.',
-            'name.min:3' => 'O nome do filme precisa ter pelo menos 3 caracteres.'
+            'name.min:3' => 'O nome do filme precisa ter pelo menos 3 caracteres.',
+            'category.required' => 'O campo categoria é obrigátorio.' 
         ];
     }
 }

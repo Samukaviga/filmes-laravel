@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Films</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -12,6 +12,7 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 
 <body class="w-screen h-screen bg-gray-900">
@@ -99,7 +100,7 @@
                         <i
                             class="fa-solid fa-lock transition duration-75 text-xl w-6 h-6 text-gray-600 group-hover:text-gray-600"></i>
 
-                        <span class="flex-1 ml-3 text-left whitespace-nowrap">Authentication</span>
+                        <span class="flex-1 ml-3 text-left whitespace-nowrap">Configurações</span>
                         <i class="fa-solid fa-caret-down w-6 h-6"></i>
                     </button>
                     <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
@@ -128,8 +129,9 @@
 
 
 
-
+     
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    @livewireScripts
 </body>
 
 </html>
